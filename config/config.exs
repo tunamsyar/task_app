@@ -10,6 +10,10 @@ use Mix.Config
 config :task_app,
   ecto_repos: [TaskApp.Repo]
 
+config :task_app, :pow,
+  user: TaskApp.Users.User,
+  repo: TaskApp.Repo
+
 # Configures the endpoint
 config :task_app, TaskAppWeb.Endpoint,
   url: [host: "localhost"],

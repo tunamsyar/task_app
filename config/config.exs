@@ -12,7 +12,8 @@ config :task_app,
 
 config :task_app, :pow,
   user: TaskApp.Users.User,
-  repo: TaskApp.Repo
+  repo: TaskApp.Repo,
+  web_module: TaskAppWeb
 
 # Configures the endpoint
 config :task_app, TaskAppWeb.Endpoint,

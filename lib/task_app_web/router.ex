@@ -11,6 +11,11 @@ defmodule TaskAppWeb.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :protected do
+    plug Pow.Plug.RequireAuthenticated,
+      error_handler: Pow.Phoenix.PlugErrorHandler
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
@@ -28,7 +33,7 @@ defmodule TaskAppWeb.Router do
   end
 
   scope "/", TaskAppWeb do
-    pipe_through :browser
+    pipe_through [:browser, :protected]
 
     resources "/tasks", TaskController
   end

@@ -7,6 +7,11 @@
   <article class="column">
     <h2>Resources</h2>
     <ul>
+      <%= if Pow.Plug.current_user(@conn) do %>
+        <li>
+          <%= link "Tasks list", to: Routes.task_path(@conn, :index) %>
+        </li>
+      <% end %>
       <li>
         <a href="https://hexdocs.pm/phoenix/overview.html">Guides &amp; Docs</a>
       </li>

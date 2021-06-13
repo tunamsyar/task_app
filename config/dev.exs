@@ -30,6 +30,9 @@ config :task_app, TaskAppWeb.Endpoint,
     ]
   ]
 
+config :task_app, TaskAppWeb.PowMailer,
+  adapter: Bamboo.LocalAdapter
+
 # ## SSL Support
 #
 # In order to use HTTPS in development, a self-signed

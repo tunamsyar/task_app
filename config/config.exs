@@ -15,7 +15,8 @@ config :task_app, :pow,
   repo: TaskApp.Repo,
   web_module: TaskAppWeb,
   extensions: [PowResetPassword],
-  controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks
+  controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks,
+  mailer_backend: TaskAppWeb.PowMailer
 
 # Configures the endpoint
 config :task_app, TaskAppWeb.Endpoint,

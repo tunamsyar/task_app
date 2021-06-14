@@ -46,6 +46,7 @@ defmodule TaskApp.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:pow, "~> 1.0.24"},
+      {:pow_assent, "~> 0.4.10"},
       {:bamboo, "~> 2.2.0"}
     ]
   end

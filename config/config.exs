@@ -18,6 +18,15 @@ config :task_app, :pow,
   controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks,
   mailer_backend: TaskAppWeb.PowMailer
 
+config :task_app, :pow_assent,
+  providers: [
+    github: [
+      client_id: "GITHUB_CLIENT_ID",
+      client_secret: "GITHUB_CLIENT_SECRET",
+      strategy: Assent.Strategy.Github
+    ]
+  ]
+
 # Configures the endpoint
 config :task_app, TaskAppWeb.Endpoint,
   url: [host: "localhost"],
